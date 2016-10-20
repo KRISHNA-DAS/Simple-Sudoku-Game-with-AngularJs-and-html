@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>sudoku</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        input{
+            font-size:20px;
+            border:0px;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+    <div align="center">
+        <table border="8" style="border-collapse: collapse;">
+            <tr ng-repeat="r in numbers track by $index">
+                <td ng-repeat="c in r track by $index">
+                    
+                    
+                    <table>
+                        <tr ng-repeat="row in c track by $index">        
+                            <td ng-repeat="col in row track by $index">
+                                <input type="text" maxlength="1" value="{{col}}"/ size="2" ng-disabled="col!=null">
+                            </td>
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+
+</html>
